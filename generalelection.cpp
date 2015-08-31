@@ -1,3 +1,14 @@
+/* Caribbean Online Judge
+ * Problem: 1003 - General Election
+ *
+ *
+ * Guillermo Garcia 30-08-2015
+ */
+
+
+
+
+
 #include <iostream>
 #include <vector>
 using namespace std;
