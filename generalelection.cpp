@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 
@@ -10,31 +11,29 @@ int main () {
 
    for (int i = 1; i<=t; i++) {  // Iterate over i cases
         int n,m;
-        int pos = 0;
         int temp = 0;
-        cin >> m >> n;
-        int sum [n];
-        int votes[n][m];
+        cin >> n >> m;
+
+        vector<int> sums(n, 0);
         // Variables
-
-
-
-        for (int j = 0; j < m; j++) { // Iterate over m regions
-            for (int k = 0; k < n; k++) { // Iterate over n candidates
-                cin >> votes[j][k]; // Take input for votes
-                sum[k]= sum[k] + votes[j][k]; // Sum up all the candiadtes'
-                //regions' votes
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j< n;j++){
+                int count;
+                cin >> count;
+                sums[j] += count;
             }
         }
 
-        for (int x = 0; x<m; x++) { // Find the candidate with most votes
-            if (sum[0]<sum[x]) {
-                sum[0]=sum[x];
-                pos = x;
+        int max = -1;
+        int pos= -1;
+        for(int i = 0; i < n; i++){
+            if(sums[i] > max){
+                max = sums[i];
+                pos = i;
             }
-
         }
-        cout << pos << endl; // Print out the array position of the largest
+
+        cout << pos+1 << endl; // Print out the array position of the largest
         // sum.
 
 
