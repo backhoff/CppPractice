@@ -24,7 +24,8 @@ int main () {
             cin >> candyNum;
             sum = sum + candyNum; // Add up
         }
-        if (sum % n == 0) cout << "YES" << endl;
+        if ((sum % n) == 0) cout << "YES";
+        else if (sum == 0) cout << "YES";
         else cout << "NO" << endl;
     }
     return 0;
